@@ -1,0 +1,71 @@
+/* Gaya umum */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+
+/* Konten utama */
+.container-fluid {
+    margin-left: 270px;
+    padding: 20px;
+    width: calc(100% - 270px);
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #1e3a8a;
+}
+
+/* Tabel */
+.table-responsive {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table th, table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+table th {
+    background-color: #1e3a8a;
+    color: white;
+}
+
+table tr:hover {
+    background-color: #f1f5f9;
+}
+
+/* Tombol DataTables */
+.dt-buttons {
+    margin-bottom: 15px;
+}
+
+.dt-buttons button {
+    background-color: #1e3a8a !important;
+    color: white !important;
+    border: none;
+    padding: 8px 12px;
+    margin-right: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.dt-buttons button:hover {
+    background-color: #2563eb !important;
+}

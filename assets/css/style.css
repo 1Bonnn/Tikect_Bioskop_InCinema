@@ -1,0 +1,346 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.main-container {
+    width: 100%;
+    position: relative;
+}
+
+/* Styling untuk header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 40px;
+    background-color: #444;
+    color: white;
+}
+
+/* Logo */
+.logo img {
+    height: 100px;
+}
+
+
+/* Navigasi */
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    transition: color 0.3s ease; /* Menambahkan efek transisi halus */
+}
+
+/* Hover pada link biasa (warna kuning) */
+nav ul li a:hover {
+    color: #f4bf3a; /* Mengubah warna teks menjadi kuning saat hover */
+ }
+ 
+ nav ul li.dropdown {
+     position: relative;
+ }
+ 
+ nav ul li.dropdown .dropdown-content {
+     display: none;
+     position: absolute;
+     background-color: #444;
+     min-width: 160px;
+     z-index: 1;
+     max-height: 300px; /* Maksimum tinggi dropdown */
+     overflow-y: auto; /* Menambahkan scrollbar jika item melebihi max-height */
+     padding: 0 10px; /* Memberikan sedikit ruang di samping */
+ }
+ 
+ nav ul li.dropdown:hover .dropdown-content {
+     display: block;
+ }
+ 
+ nav ul li.dropdown .dropdown-content a {
+     color: #f4f4f4;
+     padding: 10px;
+     text-decoration: none;
+     display: block;
+ }
+ 
+ /* Hover pada item dropdown */
+ nav ul li.dropdown .dropdown-content a:hover {
+     color: #f4bf3a;
+ }
+ 
+
+/* Search dan Login */
+.search-login {
+    display: flex;
+    align-items: center;
+    padding-inline: 5px;
+}
+.search-login input {
+    padding: 5px;
+    margin-right: 10px;
+    border-radius: 5px;
+    border: none;
+    font-size: 18px;
+}
+.search-login nav ul li {
+    margin: 0;
+}
+.search-login nav ul li .login-btn {
+    background-color: #ff6600;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    padding: 5px 10px;
+}
+.search-login nav ul li .login-btn:hover {
+    background-color: #cc5200;
+}
+.search-login nav ul li .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #444;
+    min-width: 50px;
+    z-index: 1;
+    overflow-y: auto;
+    padding: 0 10px;
+}
+.search-login nav ul li:hover .dropdown-content {
+    display: block;
+}
+.search-login nav ul li .dropdown-content a {
+    color: #f4f4f4;
+    padding: 10px;
+    text-decoration: none;
+    display: block;
+}
+.search-login nav ul li .dropdown-content a:hover {
+    color: #f4bf3a;
+}
+/* Styling untuk Slider Iklan */
+.slider-container {
+    width: 100%;
+    overflow: hidden;
+    background-color: #f2f2f2;
+    padding:  0;
+}
+
+.slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    min-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slide img {
+    width: 100%;
+    max-height: 700px;
+    object-fit: cover;
+}
+
+/* Styling untuk Button Film */
+.film-selection {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.film-btn {
+    padding: 10px 20px;
+    background-color: #ff660000;
+    color: rgb(244, 181, 10);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.film-btn:hover {
+    background-color: #100700;
+}
+
+
+
+/* Styling untuk Poster Film */
+.poster-container {
+    display: flex;
+    justify-content: center; /* Center the posters horizontally */
+    padding: 20px;
+    flex-wrap: wrap; /* Allows posters to wrap on smaller screens */
+    gap: 10px; /* Adjust gap between posters */
+}
+
+.poster {
+    position: relative;
+    width: 200px;
+    height: 300px;
+    margin: 5px; /* Reduced margin to bring posters closer */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* Menyusun tombol di bagian bawah poster */
+    align-items: center;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+/* Poster Image */
+.poster img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    opacity: 0.9; /* Agar poster sedikit transparan */
+}
+
+/* Tombol Lihat Film (Hidden by default) */
+.film-button {
+    padding: 10px 20px;
+    background-color: #ff6600;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-bottom: 10px;
+    transition: background-color 0.3s ease;
+    position: absolute; /* Position the button inside the poster */
+    bottom: 20px; /* Position button near the bottom */
+    display: none; /* Hide the button initially */
+}
+
+.film-button:hover {
+    background-color: #cc5200;
+}
+
+/* Styling untuk teks overlay (Jika ada) */
+.poster-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 10px 20px;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 5px;
+    z-index: 2;
+}
+
+/* When the poster is hovered, show the button */
+.poster:hover .film-button {
+    display: block;
+}
+
+/* Styling untuk Footer */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 60px 0; /* Same padding as the header */
+    position: relative;
+    width: 100%;
+    box-sizing: border-box; /* Ensure padding doesn't affect the width */
+}
+
+footer .footer-content {
+    position: absolute; /* Position content relative to the footer */
+    left: 20px; /* Align content to the left */
+    bottom: 10px; /* Position at the bottom */
+}
+
+footer .footer-content p {
+    margin: 5px 0;
+    font-size: 15px;
+}
+
+footer .footer-content p:first-child {
+    font-weight: bold;
+}
+
+
+/*layout teater*/
+/* Container untuk tabel */
+.table-container {
+    width: 80%; /* Tentukan lebar tabel, bisa disesuaikan */
+    margin: 0 auto; /* Ini untuk memusatkan container */
+    padding: 10px;
+}
+
+/* Tabel itu sendiri */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 auto; /* Memusatkan tabel */
+    background-color: #f9f9f9;
+}
+
+table th, table td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+/* Mengatur lebar kolom No */
+table th:first-child, table td:first-child {
+    width: 10%; /* Mengatur lebar kolom pertama (No) */
+}
+
+/* Styling untuk kolom Nama Mall */
+table th:nth-child(2), table td:nth-child(2) {
+    width: 90%; /* Mengatur kolom kedua (Nama Mall) */
+}
+
+table th {
+    background-color: #f7980a;
+    color: white;
+}
+
+table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+h1{
+    text-align: center;
+    text-transform: capitalize;
+    color: #100700;
+}
+.h1-style{
+    text-align: center;
+    color: black;
+    font-size: 2em;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #444; /* Garis bawah */
+    padding-bottom: 10px;
+}
+
+h2{
+    text-align: center;
+    text-transform: capitalize;
+    color: black;
+}
+
+.uhuy {
+    text-align: center;
+    text-transform: lowercase;
+    text-decoration-color: #333;
+}
+
